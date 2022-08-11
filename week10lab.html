@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Newton's Laws</title>
+
+<link rel="stylesheet" type="text/css" href="week10lab.css"/>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+</head>
+
+<body>
+<h1>Newton's Laws</h1>
+
+<h2>Newton's Laws of Motion</h2>
+
+<p>The following is copied verbatim from <a href="http://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">Wikipedia</a> for the purposes of playing around with Mathjax.</p>
+<p>Newton's laws of motion are three physical laws that form the basis for classical mechanics. They describe the relationship between the forces acting on a body and its motion due to those forces. They have been expressed in several different ways over nearly three centuries, and can be summarized as follows:
+<ul>
+<li>First law: If an object experiences no net force, then its velocity is constant: the object is either at rest (if its velocity is zero), or it moves in a straight line with constant speed (if its velocity is nonzero).</li>
+<li>Second law: For a body with constant mass, the acceleration $\mathbf{a}$ of the body is parallel and directly proportional to the net force $\mathbf{F}$ acting on the body, is in the direction of the net force, and is inversely proportional to the mass $m$ of the body, i.e., $\mathbf{F}=m\mathbf{a}$. In general, the force is directly proportional to the rate of change of momentum of the body, i.e., $$\mathbf{F}=\frac{d}{dt}\left(m\mathbf{v}\right).$$</li>
+<li>Third law: When a first body exerts a force $\mathbf{F}_1$ on a second body, the second body simultaneously exerts a force $\mathbf{F}_2 = -\mathbf{F}_1$ on the first body. This means that $\mathbf{F}_1$ and $\mathbf{F}_2$ are equal in magnitude and opposite in direction.</li>
+</ul>
+The three laws of motion were first compiled by Sir Isaac Newton in his work Philosophi� Naturalis Principia Mathematica, first published in 1687. Newton used them to explain and investigate the motion of many physical objects and systems. For example, in the third volume of the text, Newton showed that these laws of motion, combined with his law of universal gravitation, explained Kepler's laws of planetary motion.</p>
+
+<h2>Newton's Laws of Gravitation</h2>
+
+<p>Again, what follows is from <a href="http://en.wikipedia.org/wiki/Law_of_universal_gravitation">Wikipedia</a>.</p>
+
+<p>Newton's law of universal gravitation states that every point mass in the universe attracts every other point mass with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them. (Separately it was shown that large spherically symmetrical masses attract and are attracted as if all their mass were concentrated at their centers.) This is a general physical law derived from empirical observations by what Newton called induction. It is a part of classical mechanics and was formulated in Newton's work Philosophi� Naturalis Principia Mathematica ("the Principia"), first published on 5 July 1687. (When Newton's book was presented in 1686 to the Royal Society, Robert Hooke made a claim that Newton had obtained the inverse square law from him � see History section below.) In modern language, the law states the following:
+<div class="definition">Every point mass attracts every single other point mass by a force pointing along the line intersecting both points. The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them:
+$$F = G \frac{m_1 m_2}{r^2},$$
+where:
+<ul>
+<li>$F$ is the magnitude of the force between the masses,</li>
+<li>$G$ is the gravitational constant,</li>
+<li>$m_1$ is the first mass,</li>
+<li>$m_2$ is the second mass, and</li>
+<li>$r$ is the distance between the centers of the masses.</li>
+</ul>
+</div>
+</p>
+
+<h2>Appendix</h2>
+
+<p>The table below shows the SI units for the quantities involved in the above discussion.</p>
+
+<table>
+ <thead>
+  <tr>
+   <th>Symbol</th>
+   <th>Quantity</th>
+   <th>Unit</th>
+  </thead>
+  <tbody>
+  </tr>
+  <tr>
+   <td>$\mathbf{F}$</td>
+   <td>Force</td>
+   <td>Newton ($N$)</td>
+  </tr>
+  <tr>
+   <td>$m$</td>
+   <td>Mass</td>
+   <td>Kilogram ($kg$)</td>
+  </tr>
+  <tr>
+   <td>$\mathbf{a}$</td>
+   <td>Acceleration</td>
+   <td>Metres per second${}^2$ ($ms^{-2}$)</td>
+  </tr>
+  <tr>
+   <td>$\mathbf{v}$</td>
+   <td>Velocity</td>
+   <td>Metres per second ($ms^{-1}$)</td>
+  </tr>
+  <tr>
+   <td>$r$</td>
+   <td>Distance</td>
+   <td>Metres ($m$)</td>
+  </tr>
+  <tr>
+   <td>$G$</td>
+   <td>Gravitational constant</td>
+   <td>$N m^2 kg^{-2}$</td>
+  </tr>
+ </tbody>
+</table>
+
+<h1>Examples of Python code in webpages</h1>
+
+<p>Here's a link to a <a href="docs/higher_lower.py">.py file</a>, which can be downloaded by right-clicking and selecting 'save as'.
+
+<p>Here's what the code looks like using <a href="https://github.com/googlearchive/code-prettify">Google Prettify</a>.</p>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<pre class="prettyprint linenums">
+<code>
+# an implementation of the game of higher or lower
+
+from random import randint
+
+number = randint(1, 100)
+
+print()
+print("Higher or lower?")
+print("----------------")
+print()
+print("Try to guess the number I've thought of between 1 and 100.")
+
+attempts = 0
+guess = 0
+
+while guess != number:
+    attempts += 1
+
+    if attempts > 7:
+        print("Hurry up!")
+
+    attempt_number = str(attempts)
+    guess = int(input("Guess "+attempt_number+": "))
+
+    if guess > number:
+        print(guess, "is too high")
+    elif guess < number:
+        print(guess, "is too low")
+
+print("Correct! The answer was", guess)
+print("You took", attempts, "attempts.")
+
+if attempts > 8 and attempts < 11:
+    print("Too slow for my liking!")
+elif attempts > 10:
+    print("Were you even trying?")
+</code>
+</pre>
+
+<p>And here's embedded code using <a href="https://repl.it">repl.it</a></p>.
+
+<iframe height="400px" width="100%" src="https://repl.it/@SamMarsh1/RelevantQualifiedCompilerbug?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+</body>
+</html>
+
