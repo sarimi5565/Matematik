@@ -1,13 +1,46 @@
- body {
-    font-family: Cambria Math, sans-serif;
-    background-color: #f1f1f1;
+/* Example of CSS for a mathematics website */
+
+/* Use a font specifically designed for mathematics */
+body {
+    font-family: 'STIXGeneral', 'Cambria Math', Times, serif;
 }
-h1 {
-    text-align: center;
+
+/* High contrast color scheme for better readability */
+body {
+    background-color: #f1f1f1;
     color: #333;
 }
-p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin: 1rem 0;
+
+/* Add styles for mathematical symbols and operators */
+.math-symbol {
+    font-size: 1.5em;
+}
+
+sub {
+    font-size: 0.8em;
+    vertical-align: sub;
+}
+
+sup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+/* Add styles for fractions */
+.fraction {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.2em;
+}
+
+.fraction .numerator {
+    display: block;
+    font-size: 1.2em;
+}
+
+.fraction .denominator {
+    display: block;
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid #333;
 }
